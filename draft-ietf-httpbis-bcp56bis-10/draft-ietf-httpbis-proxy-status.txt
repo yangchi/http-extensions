@@ -5,8 +5,8 @@
 HTTP                                                       M. Nottingham
 Internet-Draft                                                    Fastly
 Intended status: Standards Track                               P. Sikora
-Expires: 29 August 2021                                           Google
-                                                        25 February 2021
+Expires: 9 September 2021                                         Google
+                                                            8 March 2021
 
 
               The Proxy-Status HTTP Response Header Field
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 August 2021.
+   This Internet-Draft will expire on 9 September 2021.
 
 Copyright Notice
 
@@ -320,8 +320,8 @@ Table of Contents
 
    For example:
 
-  Proxy-Status: ExampleProxy; error="http_protocol_error";
-                details="Malformed response header - space before colon"
+   Proxy-Status: ExampleProxy; error="http_protocol_error";
+                 details="Malformed response header - space before colon"
 
 2.2.  Defining New Proxy-Status Parameters
 
