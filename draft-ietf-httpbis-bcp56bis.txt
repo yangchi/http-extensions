@@ -108,6 +108,7 @@ Table of Contents
    7.  References
      7.1.  Normative References
      7.2.  Informative References
+   Appendix A.  Changes from RFC 3205
    Author's Address
 
 1.  Introduction
@@ -1275,16 +1276,6 @@ Table of Contents
    be avoided, the resulting system's security properties need be
    carefully scrutinised.
 
-   --- back
-
-   # Changes from RFC 3205
-
-   [RFC3205] captured the Best Current Practice in the early 2000's,
-   based on the concerns facing protocol designers at the time.  Use of
-   HTTP has changed considerably since then, and as a result this
-   document is substantially different.  As a result, the changes are
-   too numerous to list individually.
-
 7.  References
 
 7.1.  Normative References
@@ -1474,6 +1465,14 @@ Table of Contents
    [RFC3205]  Moore, K., "On the use of HTTP as a Substrate", BCP 56,
               RFC 3205, DOI 10.17487/RFC3205, February 2002,
               <https://datatracker.ietf.org/doc/html/rfc3205>.
+
+Appendix A.  Changes from RFC 3205
+
+   [RFC3205] captured the Best Current Practice in the early 2000's,
+   based on the concerns facing protocol designers at the time.  Use of
+   HTTP has changed considerably since then, and as a result this
+   document is substantially different.  As a result, the changes are
+   too numerous to list individually.
 
 Author's Address
 
