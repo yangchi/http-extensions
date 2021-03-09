@@ -6,7 +6,7 @@ HTTP                                                        M. West, Ed.
 Internet-Draft                                               Google, Inc
 Obsoletes: 6265 (if approved)                           J. Wilander, Ed.
 Intended status: Standards Track                              Apple, Inc
-Expires: 2 September 2021                                   1 March 2021
+Expires: 10 September 2021                                  9 March 2021
 
 
                 Cookies: HTTP State Management Mechanism
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 September 2021.
+   This Internet-Draft will expire on 10 September 2021.
 
 Copyright Notice
 
@@ -760,22 +760,22 @@ Table of Contents
 
    1.  Using the grammar below, divide the cookie-date into date-tokens.
 
-     cookie-date     = *delimiter date-token-list *delimiter
-     date-token-list = date-token *( 1*delimiter date-token )
-     date-token      = 1*non-delimiter
+      cookie-date     = *delimiter date-token-list *delimiter
+      date-token-list = date-token *( 1*delimiter date-token )
+      date-token      = 1*non-delimiter
 
-     delimiter       = %x09 / %x20-2F / %x3B-40 / %x5B-60 / %x7B-7E
-     non-delimiter   = %x00-08 / %x0A-1F / DIGIT / ":" / ALPHA / %x7F-FF
-     non-digit       = %x00-2F / %x3A-FF
+      delimiter       = %x09 / %x20-2F / %x3B-40 / %x5B-60 / %x7B-7E
+      non-delimiter   = %x00-08 / %x0A-1F / DIGIT / ":" / ALPHA / %x7F-FF
+      non-digit       = %x00-2F / %x3A-FF
 
-     day-of-month    = 1*2DIGIT [ non-digit *OCTET ]
-     month           = ( "jan" / "feb" / "mar" / "apr" /
-                         "may" / "jun" / "jul" / "aug" /
-                         "sep" / "oct" / "nov" / "dec" ) *OCTET
-     year            = 2*4DIGIT [ non-digit *OCTET ]
-     time            = hms-time [ non-digit *OCTET ]
-     hms-time        = time-field ":" time-field ":" time-field
-     time-field      = 1*2DIGIT
+      day-of-month    = 1*2DIGIT [ non-digit *OCTET ]
+      month           = ( "jan" / "feb" / "mar" / "apr" /
+                          "may" / "jun" / "jul" / "aug" /
+                          "sep" / "oct" / "nov" / "dec" ) *OCTET
+      year            = 2*4DIGIT [ non-digit *OCTET ]
+      time            = hms-time [ non-digit *OCTET ]
+      hms-time        = time-field ":" time-field ":" time-field
+      time-field      = 1*2DIGIT
 
    2.  Process each date-token sequentially in the order the date-tokens
        appear in the cookie-date:
@@ -1992,33 +1992,36 @@ Table of Contents
    Inc's webmail provider "https://site.example/".  They might expect
    that clicking on an emailed link to "https://projects.example/secret/
    project" would show them the secret project that they're authorized
-   to see, but if "projects.example" has marked their session cookies as
-   "SameSite", then this cross-site navigation won't send them along
-   with the request. "projects.example" will render a 404 error to avoid
-   leaking secret information, and the user will be quite confused.
+   to see, but if "https://projects.example" has marked their session
+   cookies as "SameSite=Strict", then this cross-site navigation won't
+   send them along with the request. "https://projects.example" will
+   render a 404 error to avoid leaking secret information, and the user
+   will be quite confused.
 
    Developers can avoid this confusion by adopting a session management
    system that relies on not one, but two cookies: one conceptually
    granting "read" access, another granting "write" access.  The latter
-   could be marked as "SameSite", and its absence would prompt a
+   could be marked as "SameSite=Strict", and its absence would prompt a
    reauthentication step before executing any non-idempotent action.
-   The former could drop the "SameSite" attribute entirely, or choose
-   the "Lax" version of enforcement, in order to allow users access to
-   data via top-level navigation.
+   The former could be marked as "SameSite=Lax", in order to allow users
+   access to data via top-level navigation, or "SameSite=None", to
+   permit access in all contexts (including cross-site embedded
+   contexts).
 
 8.8.3.  Mashups and Widgets
 
-   The "SameSite" attribute is inappropriate for some important use-
-   cases.  In particular, note that content intended for embedding in a
-   cross-site contexts (social networking widgets or commenting
-   services, for instance) will not have access to same-site cookies.
-   Cookies may be required for requests triggered in these cross-site
-   contexts in order to provide seamless functionality that relies on a
-   user's state.
+   The "Lax" and "Strict" values for the "SameSite" attribute are
+   inappropriate for some important use-cases.  In particular, note that
+   content intended for embedding in cross-site contexts (social
+   networking widgets or commenting services, for instance) will not
+   have access to same-site cookies.  Cookies which are required in
+   these situations should be marked with "SameSite=None" to allow
+   access in cross-site contexts.
 
    Likewise, some forms of Single-Sign-On might require cookie-based
    authentication in a cross-site context; these mechanisms will not
-   function as intended with same-site cookies.
+   function as intended with same-site cookies and will also require
+   "SameSite=None".
 
 8.8.4.  Server-controlled
 
