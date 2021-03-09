@@ -851,10 +851,10 @@ Table of Contents
    [I-D.ietf-httpbis-semantics].
 
    See [I-D.ietf-httpbis-semantics], Section 16.3.2 for guidelines to
-   consider when minting new header fields.
-   [I-D.ietf-httpbis-header-structure] provides a common structure for
-   new header fields, and avoids many issues in their parsing and
-   handling; it is RECOMMENDED that new header fields use it.
+   consider when minting new header fields.  [RFC8941] provides a common
+   structure for new header fields, and avoids many issues in their
+   parsing and handling; it is RECOMMENDED that new header fields use
+   it.
 
    It is RECOMMENDED that header field names be short (even when field
    compression is used, there is an overhead) but appropriately
@@ -1412,12 +1412,9 @@ Table of Contents
               DOI 10.17487/RFC7540, May 2015,
               <https://datatracker.ietf.org/doc/html/rfc7540>.
 
-   [I-D.ietf-httpbis-header-structure]
-              Nottingham, M. and P. Kamp, "Structured Field Values for
-              HTTP", Work in Progress, Internet-Draft, draft-ietf-
-              httpbis-header-structure-19, 3 June 2020,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              header-structure-19.txt>.
+   [RFC8941]  Nottingham, M. and P-H. Kamp, "Structured Field Values for
+              HTTP", RFC 8941, DOI 10.17487/RFC8941, February 2021,
+              <https://datatracker.ietf.org/doc/html/rfc8941>.
 
    [XML]      Bray, T., Paoli, J., Sperberg-McQueen, M., Maler, E., and
               F. Yergeau, "Extensible Markup Language (XML) 1.0 (Fifth
