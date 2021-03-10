@@ -6,7 +6,7 @@ HTTP                                                        M. West, Ed.
 Internet-Draft                                               Google, Inc
 Obsoletes: 6265 (if approved)                           J. Wilander, Ed.
 Intended status: Standards Track                              Apple, Inc
-Expires: 10 September 2021                                  9 March 2021
+Expires: 11 September 2021                                 10 March 2021
 
 
                 Cookies: HTTP State Management Mechanism
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 September 2021.
+   This Internet-Draft will expire on 11 September 2021.
 
 Copyright Notice
 
@@ -1571,7 +1571,7 @@ Table of Contents
 
 5.5.2.  Non-HTTP APIs
 
-   The user agent may implement "non-HTTP" APIs that can be used to
+   The user agent MAY implement "non-HTTP" APIs that can be used to
    access stored cookies.
 
    A user agent MAY return an empty cookie-string in certain contexts,
@@ -1587,9 +1587,8 @@ Table of Contents
 
 5.5.3.  Retrieval Algorithm
 
-   The user agent MUST use an algorithm equivalent to the following
-   algorithm to compute the cookie-string from a cookie store, a
-   retrieval-uri, and the retrieval's same-site status.
+   Given a cookie store, a retrieval-uri, and the same-site status of
+   the retrieval-uri, the following algorithm returns a cookie-string.
 
    1.  Let cookie-list be the set of cookies from the cookie store that
        meets all of the following requirements:
@@ -1627,8 +1626,9 @@ Table of Contents
           cookie unless all of the following conditions are met:
 
           -  The retrieval is for a Cookie header in the HTTP request
-             associated with the retrieval-uri The same-site-flag is
-             "Lax" or "Default".
+             associated with the retrieval-uri.
+
+          -  The same-site-flag is "Lax" or "Default".
 
           -  The HTTP request's method is "safe".
 
