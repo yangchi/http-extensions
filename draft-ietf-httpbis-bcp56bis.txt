@@ -816,6 +816,11 @@ Table of Contents
    automatically followed, it needs to explicitly specify the
    circumstances when this is required.
 
+   Redirects can be cached (when appropriate cache directives are
+   present), but beyond that they are not 'sticky' -- i.e., redirection
+   of a URI will not result in the client assuming that similar URIs
+   (e.g., with different query parameters) will also be redirected.
+
    Applications using HTTP are encouraged to specify that 301 and 302
    responses change the subsequent request method from POST (but no
    other method) to GET, to be compatible with browsers.  Generally,
