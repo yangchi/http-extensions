@@ -462,8 +462,8 @@ Table of Contents
       certificates are to be checked according to
       [I-D.ietf-httpbis-semantics], Section 4.3.4 when HTTPS is used.
 
-   Applications using HTTP MUST NOT require HTTP features that are
-   usually negotiated to be supported by clients.  For example,
+   Applications using HTTP should not statically require HTTP features
+   that are usually negotiated to be supported by clients.  For example,
    requiring that clients support responses with a certain content-
    coding ([I-D.ietf-httpbis-semantics], Section 8.4.1) instead of
    negotiating for it ([I-D.ietf-httpbis-semantics], Section 12.5.3)
@@ -863,7 +863,7 @@ Table of Contents
    the header field name, separated by a "-".
 
    For example, if the "example" application needs to create three
-   headers, they might be called "example-foo", "example-bar" and
+   header fields, they might be called "example-foo", "example-bar" and
    "example-baz".  Note that the primary motivation here is to avoid
    consuming more generic field names, not to reserve a portion of the
    namespace for the application; see [RFC6648] for related
@@ -875,9 +875,10 @@ Table of Contents
    that the "Location" header field has a special meaning in a certain
    context.
 
-   See Section 4.9 for the interaction between headers and HTTP caching;
-   in particular, request header fields that are used to "select" a
-   response have impact there, and need to be carefully considered.
+   See Section 4.9 for the interaction between header fields and HTTP
+   caching; in particular, request header fields that are used to
+   "select" a response have impact there, and need to be carefully
+   considered.
 
    See Section 4.10 for considerations regarding header fields that
    carry application state (e.g., Cookie).
@@ -980,10 +981,10 @@ Table of Contents
 4.9.4.  Varying Content Based Upon the Request
 
    If an application uses a request header field to change the
-   response's headers or content, authors should point out that this has
-   implications for caching; in general, such resources need to either
-   make their responses uncacheable (e.g., with the "no-store" cache-
-   control directive defined in [I-D.ietf-httpbis-cache],
+   response's header fields or content, authors should point out that
+   this has implications for caching; in general, such resources need to
+   either make their responses uncacheable (e.g., with the "no-store"
+   cache-control directive defined in [I-D.ietf-httpbis-cache],
    Section 5.2.2.3) or send the Vary response header field
    ([I-D.ietf-httpbis-semantics], Section 12.5.5) on all responses from
    that resource (including the "default" response).
