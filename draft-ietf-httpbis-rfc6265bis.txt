@@ -2,11 +2,15 @@
 
 
 
-HTTP                                                        M. West, Ed.
+HTTP                                                        L. Chen, Ed.
 Internet-Draft                                               Google, Inc
-Obsoletes: 6265 (if approved)                           J. Wilander, Ed.
-Intended status: Standards Track                              Apple, Inc
-Expires: 13 September 2021                                 12 March 2021
+Obsoletes: 6265 (if approved)                         S. Englehardt, Ed.
+Intended status: Standards Track                                 Mozilla
+Expires: 13 September 2021                                  M. West, Ed.
+                                                             Google, Inc
+                                                        J. Wilander, Ed.
+                                                              Apple, Inc
+                                                           12 March 2021
 
 
                 Cookies: HTTP State Management Mechanism
@@ -2488,13 +2492,24 @@ A.9.  draft-ietf-httpbis-rfc6265bis-08
 
 Acknowledgements
 
-   RFC 6265 was written by Adam Barth.  This document is a minor update
-   of RFC 6265, adding small features, and aligning the specification
-   with the reality of today's deployments.  Here, we're standing upon
-   the shoulders of a giant since the majority of the text is still
-   Adam's.
+   RFC 6265 was written by Adam Barth.  This document is an update of
+   RFC 6265, adding features and aligning the specification with the
+   reality of today's deployments.  Here, we're standing upon the
+   shoulders of a giant since the majority of the text is still Adam's.
 
 Authors' Addresses
+
+   Lily Chen (editor)
+   Google, Inc
+
+   Email: chlily@google.com
+
+
+   Steven Englehardt (editor)
+   Mozilla
+
+   Email: senglehardt@mozilla.com
+
 
    Mike West (editor)
    Google, Inc
