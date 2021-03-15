@@ -1665,7 +1665,9 @@ Document History
 
    *  draft-ietf-httpbis-message-signatures
 
-      -  Since -01
+      -  Since -02
+
+      -  -02
 
          o  Removed editorial comments on document sources.
 
@@ -1675,10 +1677,10 @@ Document History
             Input" and "Signature" Dictionary Structured Header Fields.
 
          o  Defined content identifiers for individual Dictionary
-            members, e.g., "x-dictionary-field:member-name".
+            members, e.g., ""x-dictionary-field";key=member-name".
 
          o  Defined content identifiers for first N members of a List,
-            e.g., "x-list-field:4".
+            e.g., ""x-list-field":prefix=4".
 
          o  Fixed up examples.
 
@@ -1688,6 +1690,9 @@ Document History
             them.
 
          o  Required signature parameters to be included in signature.
+
+         o  Added guidance on backwards compatibility, detection, and
+            use of signature methods.
 
       -  -01
 
