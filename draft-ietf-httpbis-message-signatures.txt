@@ -647,7 +647,7 @@ Table of Contents
       A timestamp representing the point in time that the signature was
       generated, represented as an integer.  Sub-second precision is not
       supported.  A signature's Creation Time MAY be undefined,
-      indicating that it is unknown. "sf-integer"
+      indicating that it is unknown.
 
    Expiration Time:
       A timestamp representing the point in time at which the signature
