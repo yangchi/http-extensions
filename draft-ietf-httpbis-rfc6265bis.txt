@@ -3,14 +3,14 @@
 
 
 HTTP                                                        L. Chen, Ed.
-Internet-Draft                                               Google, Inc
+Internet-Draft                                                Google LLC
 Obsoletes: 6265 (if approved)                         S. Englehardt, Ed.
 Intended status: Standards Track                                 Mozilla
-Expires: 16 September 2021                                  M. West, Ed.
-                                                             Google, Inc
+Expires: 18 September 2021                                  M. West, Ed.
+                                                              Google LLC
                                                         J. Wilander, Ed.
                                                               Apple, Inc
-                                                           15 March 2021
+                                                           17 March 2021
 
 
                 Cookies: HTTP State Management Mechanism
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 September 2021.
+   This Internet-Draft will expire on 18 September 2021.
 
 Copyright Notice
 
@@ -2505,7 +2505,7 @@ Acknowledgements
 Authors' Addresses
 
    Lily Chen (editor)
-   Google, Inc
+   Google LLC
 
    Email: chlily@google.com
 
@@ -2517,7 +2517,7 @@ Authors' Addresses
 
 
    Mike West (editor)
-   Google, Inc
+   Google LLC
 
    Email: mkwst@google.com
    URI:   https://mikewest.org/
