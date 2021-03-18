@@ -891,7 +891,7 @@ Table of Contents
 
 4.8.  Defining Message Content
 
-   Common syntactic conventions for the format of payloads include JSON
+   Common syntactic conventions for message contents include JSON
    [RFC8259], XML [XML], and CBOR [RFC7049].  Best practices for their
    use are out of scope for this document.
 
