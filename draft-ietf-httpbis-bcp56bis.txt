@@ -97,11 +97,12 @@ Table of Contents
        4.9.3.  Caching and Application Semantics
        4.9.4.  Varying Content Based Upon the Request
      4.10. Handling Application State
-     4.11. Client Authentication
-     4.12. Co-Existing with Web Browsing
-     4.13. Maintaining Application Boundaries
-     4.14. Using Server Push
-     4.15. Allowing Versioning and Evolution
+     4.11. Making Multiple Requests
+     4.12. Client Authentication
+     4.13. Co-Existing with Web Browsing
+     4.14. Maintaining Application Boundaries
+     4.15. Using Server Push
+     4.16. Allowing Versioning and Evolution
    5.  IANA Considerations
    6.  Security Considerations
      6.1.  Privacy Considerations
@@ -1026,13 +1027,41 @@ Table of Contents
    Mitigations include using a request-specific token to assure the
    intent of the client.
 
+4.11.  Making Multiple Requests
+
+   Clients often need to send multiple requests to perform a task.
+
+   In HTTP/1, parallel requests are most often supported by opening
+   multiple connections.  Application performance can be impacted when
+   too many simultaneous connections are used, because connections'
+   congestion control will not be coordinated.  Furthermore, it can be
+   difficult for applications to anticipate when and which connection to
+   use to issue a given request, further impacting performance.
+
+   HTTP/2 and HTTP/3 offer multiplexing to applications, removing the
+   need to use multiple connections.  However, application performance
+   can still be significantly affected by how the server chooses to
+   prioritize responses.  Depending on the application, it might be best
+   for the server to determine the priority of responses, or for the
+   client to hint its priorities to the server (see, e.g.,
+   [I-D.ietf-httpbis-priority]).
+
+   In all versions of HTTP, requests are made independently -- you can't
+   rely on the relative order of two requests to guarantee processing
+   order.  This is because they might be sent over a multiplexed
+   protocol by an intermediary, sent to different origin servers, or the
+   server might even perform processing in a different order.  If two
+   requests need strict ordering, the only reliable way to assure the
+   outcome is to issue the second request when the response to the first
+   has begun.
+
    Applications MUST NOT make assumptions about the relationship between
    separate requests on a single transport connection; doing so breaks
    many of the assumptions of HTTP as a stateless protocol, and will
    cause problems in interoperability, security, operability and
    evolution.
 
-4.11.  Client Authentication
+4.12.  Client Authentication
 
    Applications can use HTTP authentication [I-D.ietf-httpbis-semantics]
    to identify clients.  The Basic authentication scheme [RFC7617] MUST
@@ -1051,7 +1080,7 @@ Table of Contents
    possible.  Mitigations include using a request-specific token to
    assure the intent of the client.
 
-4.12.  Co-Existing with Web Browsing
+4.13.  Co-Existing with Web Browsing
 
    Even if there is not an intent for an application to be used with a
    Web browser, its resources will remain available to browsers and
@@ -1128,7 +1157,7 @@ Table of Contents
    the abstraction that browsers use for HTTP; it enforces many of these
    best practices.
 
-4.13.  Maintaining Application Boundaries
+4.14.  Maintaining Application Boundaries
 
    Because the origin [RFC6454] is how many HTTP capabilities are
    scoped, applications also need to consider how deployments might
@@ -1162,7 +1191,7 @@ Table of Contents
    origin data to browsers will need to implement the CORS protocol; see
    [FETCH].
 
-4.14.  Using Server Push
+4.15.  Using Server Push
 
    HTTP/2 adds the ability for servers to "push" request/response pairs
    to clients in [RFC7540], Section 8.2.  While server push seems like a
@@ -1201,7 +1230,7 @@ Table of Contents
    requirements regarding authority in [RFC7540], Section 8.2, to avoid
    cross-origin push attacks.
 
-4.15.  Allowing Versioning and Evolution
+4.16.  Allowing Versioning and Evolution
 
    It's often necessary to introduce new features into application
    protocols, and change existing ones.
@@ -1231,13 +1260,13 @@ Table of Contents
    use of 'http' URLs, to provide authentication, integrity and
    confidentiality, as well as mitigate pervasive monitoring attacks.
 
-   Section 4.12 highlights the implications of Web browsers'
+   Section 4.13 highlights the implications of Web browsers'
    capabilities on applications that use HTTP.
 
-   Section 4.13 discusses the issues that arise when applications are
+   Section 4.14 discusses the issues that arise when applications are
    deployed on the same origin as Web sites (and other applications).
 
-   Section 4.14 highlights risks of using HTTP/2 server push in a manner
+   Section 4.15 highlights risks of using HTTP/2 server push in a manner
    other than specified.
 
    Applications that use HTTP in a manner that involves modification of
@@ -1442,6 +1471,13 @@ Table of Contents
    [RFC5861]  Nottingham, M., "HTTP Cache-Control Extensions for Stale
               Content", RFC 5861, DOI 10.17487/RFC5861, May 2010,
               <https://datatracker.ietf.org/doc/html/rfc5861>.
+
+   [I-D.ietf-httpbis-priority]
+              Oku, K. and L. Pardue, "Extensible Prioritization Scheme
+              for HTTP", Work in Progress, Internet-Draft, draft-ietf-
+              httpbis-priority-03, 11 January 2021,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
+              priority-03.txt>.
 
    [RFC7617]  Reschke, J., "The 'Basic' HTTP Authentication Scheme",
               RFC 7617, DOI 10.17487/RFC7617, September 2015,
