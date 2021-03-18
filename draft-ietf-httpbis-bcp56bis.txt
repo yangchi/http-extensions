@@ -1035,8 +1035,9 @@ Table of Contents
    multiple connections.  Application performance can be impacted when
    too many simultaneous connections are used, because connections'
    congestion control will not be coordinated.  Furthermore, it can be
-   difficult for applications to anticipate when and which connection to
-   use to issue a given request, further impacting performance.
+   difficult for applications to decide when and to select which
+   connection to use to issue a given request, further impacting
+   performance.
 
    HTTP/2 and HTTP/3 offer multiplexing to applications, removing the
    need to use multiple connections.  However, application performance
@@ -1052,8 +1053,8 @@ Table of Contents
    protocol by an intermediary, sent to different origin servers, or the
    server might even perform processing in a different order.  If two
    requests need strict ordering, the only reliable way to assure the
-   outcome is to issue the second request when the response to the first
-   has begun.
+   outcome is to issue the second request when the final response to the
+   first has begun.
 
    Applications MUST NOT make assumptions about the relationship between
    separate requests on a single transport connection; doing so breaks
