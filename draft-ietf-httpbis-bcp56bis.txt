@@ -3,10 +3,10 @@
 
 
 HTTP                                                       M. Nottingham
-Internet-Draft                                             17 March 2021
+Internet-Draft                                             18 March 2021
 Obsoletes: 3205 (if approved)                                           
 Intended status: Best Current Practice                                  
-Expires: 18 September 2021
+Expires: 19 September 2021
 
 
                       Building Protocols with HTTP
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 18 September 2021.
+   This Internet-Draft will expire on 19 September 2021.
 
 Copyright Notice
 
@@ -90,7 +90,7 @@ Table of Contents
      4.6.  Using HTTP Status Codes
        4.6.1.  Redirection
      4.7.  Specifying HTTP Header Fields
-     4.8.  Defining Message Payloads
+     4.8.  Defining Message Content
      4.9.  Leveraging HTTP Caching
        4.9.1.  Freshness
        4.9.2.  Stale Responses
@@ -388,7 +388,7 @@ Table of Contents
    Content-Length: 500
    Server: Bar/2.2
 
-   [payload here]
+   [content here]
 
 4.2.  Specifying Server Behaviour
 
@@ -888,9 +888,9 @@ Table of Contents
    See Section 4.10 for considerations regarding header fields that
    carry application state (e.g., Cookie).
 
-4.8.  Defining Message Payloads
+4.8.  Defining Message Content
 
-   There are many potential formats for payloads; for example, JSON
+   Common syntactic conventions for the format of payloads include JSON
    [RFC8259], XML [XML], and CBOR [RFC7049].  Best practices for their
    use are out of scope for this document.
 
