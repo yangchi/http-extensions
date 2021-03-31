@@ -5,10 +5,10 @@
 HTTP                                                     A. Backman, Ed.
 Internet-Draft                                                    Amazon
 Intended status: Standards Track                               J. Richer
-Expires: 1 October 2021                              Bespoke Engineering
+Expires: 2 October 2021                              Bespoke Engineering
                                                                M. Sporny
                                                           Digital Bazaar
-                                                           30 March 2021
+                                                           31 March 2021
 
 
                          Signing HTTP Messages
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 October 2021.
+   This Internet-Draft will expire on 2 October 2021.
 
 Copyright Notice
 
@@ -325,8 +325,8 @@ Table of Contents
       replay detection.
 
    *  A means of retrieving the key material used to verify the
-      signature.  An application will usually use the "keyid" field of
-      the "Signature-Input" parameter value and define rules for
+      signature.  An application will usually use the "keyid" parameter
+      of the "Signature-Input" header value and define rules for
       resolving a key from there.
 
    *  A means of determining the signature algorithm used to verify the
@@ -1494,17 +1494,17 @@ B.2.  Example keyid Values
    reserved, and deployments are free to use them, with these
    associations or others.
 
-        +============+================+==========================+
-        | keyid      | Algorithm      | Verification Key         |
-        +============+================+==========================+
-        | test-key-a | rsa-pss-SHA256 | The public key specified |
-        |            |                | in Appendix B.1.1        |
-        +------------+----------------+--------------------------+
-        | test-key-b | rsa-v1_5-256   | The public key specified |
-        |            |                | in Appendix B.1.1        |
-        +------------+----------------+--------------------------+
+        +============+=================+==========================+
+        | keyid      | Algorithm       | Verification Key         |
+        +============+=================+==========================+
+        | test-key-a | rsa-pss-sha256  | The public key specified |
+        |            |                 | in Appendix B.1.1        |
+        +------------+-----------------+--------------------------+
+        | test-key-b | rsa-v1_5-sha256 | The public key specified |
+        |            |                 | in Appendix B.1.1        |
+        +------------+-----------------+--------------------------+
 
-                                 Table 9
+                                  Table 9
 
 B.3.  Test Cases
 
@@ -1523,7 +1523,7 @@ B.3.  Test Cases
 
 B.3.1.  Signature Verification
 
-B.3.1.1.  Minimal Signature Header using rsa-pss-SHA256
+B.3.1.1.  Minimal Signature Header using rsa-pss-sha256
 
    This presents a minimal "Signature-Input" and "Signature" header for
    a signature using the "rsa-pss-sha256" algorithm:
@@ -1544,7 +1544,7 @@ B.3.1.1.  Minimal Signature Header using rsa-pss-SHA256
          +===========================+==========================+
          | Property                  | Value                    |
          +===========================+==========================+
-         | Algorithm                 | rsa-pss-SHA256           |
+         | Algorithm                 | rsa-pss-sha256           |
          +---------------------------+--------------------------+
          | Covered Content           | date                     |
          +---------------------------+--------------------------+
@@ -1561,7 +1561,7 @@ B.3.1.1.  Minimal Signature Header using rsa-pss-SHA256
    The corresponding Signature Input is:
 
  "date": Tue, 07 Jun 2014 20:51:35 GMT
- "@signature-params": ("date"); alg="rsa-pss-SHA256"; keyid="test-key-b"
+ "@signature-params": ("date"); alg="rsa-pss-sha256"; keyid="test-key-b"
 
 Acknowledgements
 
