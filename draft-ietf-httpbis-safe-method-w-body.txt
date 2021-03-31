@@ -28,7 +28,7 @@ Editorial Note
 
    Working Group information can be found at https://httpwg.org/; source
    code and issues list for this draft can be found at
-   https://github.com/httpwg/http-core.
+   https://github.com/httpwg/http-extensions/labels/safe-method-w-body.
 
 Status of This Memo
 
