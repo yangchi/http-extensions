@@ -3,10 +3,10 @@
 
 
 HTTP                                                       M. Nottingham
-Internet-Draft                                             30 March 2021
+Internet-Draft                                             31 March 2021
 Obsoletes: 3205 (if approved)                                           
 Intended status: Best Current Practice                                  
-Expires: 1 October 2021
+Expires: 2 October 2021
 
 
                       Building Protocols with HTTP
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 October 2021.
+   This Internet-Draft will expire on 2 October 2021.
 
 Copyright Notice
 
@@ -997,7 +997,7 @@ Table of Contents
    this has implications for caching; in general, such resources need to
    either make their responses uncacheable (e.g., with the "no-store"
    cache-control directive defined in [I-D.ietf-httpbis-cache],
-   Section 5.2.2.3) or send the Vary response header field
+   Section 5.2.2.5) or send the Vary response header field
    ([I-D.ietf-httpbis-semantics], Section 12.5.5) on all responses from
    that resource (including the "default" response).
 
