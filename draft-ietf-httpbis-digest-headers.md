@@ -1285,6 +1285,11 @@ registry:
 * Description: As specified in {{algorithms}}.
 * Status: As specified in {{algorithms}}.
 
+## Changes Compared to RFC3230
+
+The `contentMD5` digest-algorithm token defined in Section 5 of [RFC3230] is removed from
+the HTTP Digest Algorithm Values Registry.
+
 ## Changes Compared to RFC5843
 
 The digest-algorithm values for "MD5", "SHA", "SHA-256", "SHA-512", "UNIXcksum", "UNIXsum",
@@ -1444,9 +1449,8 @@ Location: /authors/123
 
 ## Deprecate Negotiation of Content-MD5 {#deprecate-contentMD5}
 
-This RFC deprecates the negotiation of Content-MD5 as it has been obsoleted by
+This RFC deprecates the negotiation of `Content-MD5` as it has been obsoleted by
 [RFC7231].
-The `contentMD5` token defined in Section 5 of [RFC3230] MUST NOT be used as a digest-algorithm.
 
 ## Obsolete Digest Field Parameters {#obsolete-parameters}
 
